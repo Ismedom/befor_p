@@ -36,5 +36,12 @@ const getDataWithLimit = async (req, res) => {
     console.log(err);
   }
 };
+const searchFun = async (req, res) => {
+  try {
+    const item = await mongooseScema.find({});
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-module.exports = { postData, getAllData, getDataWithLimit };
+module.exports = { postData, getAllData, getDataWithLimit, searchFun };
