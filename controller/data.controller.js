@@ -28,20 +28,20 @@ const getAllData = async (req, res) => {
 };
 const getDataWithLimit = async (req, res) => {
   try {
-    const itemWithLimit = await mongooseScema
-      .find()
-      .limit(parseInt(req.params.number));
+    const itemWithLimit = await mongooseScema.find().limit(parseInt(req.params.number));
     res.send(itemWithLimit);
   } catch (err) {
     console.log(err);
   }
 };
 const searchFun = async (req, res) => {
-  try {
-    const item = await mongooseScema.find({});
-  } catch (err) {
-    console.error(err);
-  }
+  console.log(req.params.prompt);
+  res.send({ IsAccept: new Date() });
+  // try {
+  //   const item = await mongooseScema.find({ projectName });
+  // } catch (err) {
+  //   console.error(err);
+  // }
 };
 
 module.exports = { postData, getAllData, getDataWithLimit, searchFun };

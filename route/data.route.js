@@ -4,6 +4,7 @@ function dataRouter(app) {
   app.get("/", controller.getAllData);
   app.post("/", controller.postData);
   app.get("/getwithLimit/:number", controller.getDataWithLimit);
+  app.get("/items/search/:prompt", controller.searchFun);
 }
 
 module.exports = dataRouter;
