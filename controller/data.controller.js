@@ -1,14 +1,18 @@
+//
+
 const mongooseScema = require("../models/model");
 const postData = async (req, res) => {
   let indexCounter = (await mongooseScema.find()).length;
   try {
-    const item = await mongooseScema.create({
-      projectName: req.body.projectName,
+    const { projectName, gitHubSrc, productSrc, explanation } = req.body;
+
+    const item = {
+      projectName,
       index: indexCounter + 1,
-      gitHubSrc: req.body.gitHubSrc,
-      productSrc: req.body.productSrc,
-      explaination: req.body.explaination,
-    });
+      gitHubSrc,
+      productSrc,
+      explanation,
+    };
     item
       .save()
       .then(() => res.send(item))
