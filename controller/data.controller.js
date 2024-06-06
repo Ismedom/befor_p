@@ -1,4 +1,4 @@
-const mongooseScema = require("../model");
+const mongooseScema = require("../models/model");
 const postData = async (req, res) => {
   let indexCounter = (await mongooseScema.find()).length;
   try {
