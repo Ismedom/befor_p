@@ -1,4 +1,4 @@
-const mongooseViewSchema = require("../Models/View.model");
+const mongooseViewSchema = require("../models/View.model");
 
 const viewerCountFun = async (req, res) => {
   try {

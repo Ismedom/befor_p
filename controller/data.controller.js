@@ -5,7 +5,6 @@ const postData = async (req, res) => {
   let indexCounter = (await mongooseScema.find()).length;
   try {
     const { projectName, gitHubSrc, productSrc, explanation } = req.body;
-
     const item = {
       projectName,
       index: indexCounter + 1,
@@ -13,6 +12,7 @@ const postData = async (req, res) => {
       productSrc,
       explanation,
     };
+    //
     item
       .save()
       .then(() => res.send(item))

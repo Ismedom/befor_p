@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 function connectDB() {
-  if (!process.env.MONGODBURL) {
-    throw new Error("MONGODBURL_VIEW environment variable is not defined");
+  const mongoDBUrl = process.env.MONGODBURL;
+  if (!mongoDBUrl) {
+    throw new Error("MONGODBURL environment variable is not defined");
   }
-  return mongoose.createConnection(process.env.MONGODBURL, {
+  return mongoose.createConnection(mongoDBUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

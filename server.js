@@ -17,11 +17,11 @@ app.use(
 );
 app.use(bodyParser.json());
 
-router(app);
-view(app);
-
 connectView();
 connetDB();
+
+router(app);
+view(app);
 
 function listening() {
   app.listen(process.env.PORT || 3000, () => {
