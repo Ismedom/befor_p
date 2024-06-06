@@ -13,7 +13,7 @@ const viewerCountFun = async (req, res) => {
     res.send({ itemCount });
 
     console.log(itemCount);
-    // await mongooseViewSchema.deleteMany({});
+    await mongooseViewSchema.deleteMany({});
   } catch (err) {
     console.log(err);
   }
